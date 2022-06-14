@@ -9,12 +9,10 @@ public class Solution {
         HashMap<Integer,Integer> map = new HashMap<>();
         int sum = 0;
         int max = 0;
+        map.put(0,-1);
         for(int i=0; i<arr.size(); i++){
             sum = sum+arr.get(i);
-            if(sum == 0){
-                max = Math.max(max,i+1);
-            }
-            else if(map.containsKey(sum)){
+            if(map.containsKey(sum)){
                 max = Math.max(max,i-map.get(sum));
             }
             else{
