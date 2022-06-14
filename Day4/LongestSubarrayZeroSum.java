@@ -13,9 +13,8 @@ public class Solution {
             sum = sum+arr.get(i);
             if(sum == 0){
                 max = Math.max(max,i+1);
-                continue;
             }
-            if(map.containsKey(sum)){
+            else if(map.containsKey(sum)){
                 max = Math.max(max,i-map.get(sum));
             }
             else{
